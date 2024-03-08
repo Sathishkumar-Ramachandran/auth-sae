@@ -27,20 +27,18 @@ app.use(morgan('dev'));
 // app.use("/api/v1/auth/login", authRoutes);
 // app.use("/api/v1/auth/signup", signupRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Auth API is running on ${PORT}`);
-});
 
-// connectToDatabase()
-//     .then((client) => {
-//         const db = client.db('auth');
-//         app.listen(PORT, () => {
-//             console.log(`Auth API is running on ${PORT}`);
-//         });
-//     })
-//     .catch((error) => {
-//         let errorMessage = error.message;
-//         console.error(`Error connecting Auth Service ${errorMessage}`);
-//         process.exit(1);
-//     });
+connectToDatabase()
+    .then((client) => {
+       // const db = client.db('auth');
+        app.listen(PORT, () => {
+            console.log("Database Connection Established & Tested");
+            console.log(`Auth API is running on ${PORT}`);
+        });
+    })
+    .catch((error) => {
+        let errorMessage = error.message;
+        console.error(`Error connecting Auth Service ${errorMessage}`);
+        process.exit(1);
+    });
     
