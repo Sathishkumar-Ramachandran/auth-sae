@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 10001;
 
 //v1 Imports
+const connectToDatabase = require('./src/config/v1/pgConnection.js');
 // const authRoutes = require('./src/routes/v1/loginRoute.js');
 // const connectToDatabase = require('./src/services/v1/dbConnectionService.js');
 // const signupRoutes = require('./src/routes/v1/signupRoute.js');

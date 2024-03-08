@@ -1,5 +1,5 @@
 const { Client } = require('pg');
-const { pool } = require('./v1/dbConnection.js');
+const { pool } = require('./dbConnection.js');
 
 
 async function connectToDatabase() {
